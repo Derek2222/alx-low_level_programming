@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- *main - Changes stderr without using printf or puts
+ * main - Changes stderr without using printf or puts
  *
- *Return: Always 1
+ * Return: Always 1
  *
  */
 int main(void)
