@@ -14,10 +14,11 @@ int main(void)
 {
 	int i;
 
-	while (c < 10)
+	for (i = 48; i < 58; i++)
 	{
-		putchar(48 + c);
-		if (c != 9)
+		putchar(i);
+		if (i < 57)
+
 		{
 			putchar(44);
 			putchar(32);
