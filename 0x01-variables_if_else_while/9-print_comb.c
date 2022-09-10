@@ -1,12 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
- * main - main block
- * Description: prints all single digit numbers of base 10
- * starting from 0, followed by a new line.
+ * main - print all base10 numbers comma seperated without printf
+ * 
+ *
+ *
  * Return: 0
+ *
  */
+
 int main(void)
+
 {
 	int c = 0;
 
@@ -15,10 +19,10 @@ int main(void)
 		putchar(48 + c);
 		if (c != 9)
 		{
-			putchar(',');
-			putchar(',');
+			putchar(44);
+			putchar(32);
 		}
-		c++;
+	
 	}
 	putchar('\n');
 	return (0);
