@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_square - check for a digit
- * @n : number of _ to be printed
+ * print_diagonal - check for a digit
+ * @n : number of \\ to be printed
  * Return:void
  */
 
-void print_square(int n)
+void print_diagonal(int n)
 {
 
 	int i = 0, ii;
@@ -14,12 +14,13 @@ void print_square(int n)
 	while (i < n && n > 0)
 	{
 		ii = 0;
-		while (ii < n)
+		while (ii < i)
 		{
-			_putchar('#');
+			_putchar(' ');
 			ii++;
 		}
 
+		_putchar('\\');
 		_putchar('\n');
 		i++;
 	}
