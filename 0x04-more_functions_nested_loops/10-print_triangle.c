@@ -32,7 +32,4 @@ void print_triangle(int size)
 	if (i == 1)
 		_putchar('\n');
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Term
+
