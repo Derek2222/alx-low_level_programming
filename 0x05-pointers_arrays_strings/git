@@ -1,0 +1,4 @@
+#!/bin/bash
+git add ..
+git commit -m 'i created a commit for pointers_arrays_strings'
+git push
