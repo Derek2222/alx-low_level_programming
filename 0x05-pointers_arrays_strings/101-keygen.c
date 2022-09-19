@@ -1,30 +1,27 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * _atoi - convert a string to an integer.
+ * @s: char type string
+ * Return: integer converted
  */
-int main(void)
-{
-    int n;
 
-    n = _atoi("98");
-    printf("%d\n", n);
-    n = _atoi("-402");
-    printf("%d\n", n);
-    n = _atoi("          ------++++++-----+++++--98");
-    printf("%d\n", n);
-    n = _atoi("214748364");
-    printf("%d\n", n);
-    n = _atoi("0");
-    printf("%d\n", n);
-    n = _atoi("Suite 402");
-    printf("%d\n", n);
-    n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
-    printf("%d\n", n);
-    n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
-    printf("%d\n", n);
-    return (0);
+int _atoi(char *s)
+{
+	int sign = 1, resp = 0, firstNum;
+
+	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+	{
+		if (s[firstNum] == '-')
+		{
+			sign *= -1;
+		}
+	}
+
+	for (int i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+	{
+		resp *= 10;
+		resp += (s[i] - 48);
+	}
+
+	return (sign * resp);
 }
