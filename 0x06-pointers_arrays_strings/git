@@ -1,0 +1,4 @@
+#!/bin/bash
+git add ..
+git commit -m ' created a commit for pointer'
+git push
