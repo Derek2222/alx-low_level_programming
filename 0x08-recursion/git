@@ -1,0 +1,5 @@
+#!/bin/bash
+git add .
+git commit -m 'i created recursion for c'
+git push
+
