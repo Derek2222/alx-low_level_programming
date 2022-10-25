@@ -1,0 +1,4 @@
+git add .
+git commit -m 'i created more_singly_linked_lists for c'
+git push
+
