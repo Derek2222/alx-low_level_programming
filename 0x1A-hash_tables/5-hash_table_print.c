@@ -1,29 +1,42 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_get - Retrieve the value associated with
- *                  a key in a hash table.
- * @ht: A pointer to the hash table.
- * @key: The key to get the value of.
- *
- * Return: If the key cannot be matched - NULL.
- *         Otherwise - the value associated with key in ht.
+ * hash_table_print - function that prints a hash table
+ * @ht: hash table from which the key/values are to be read
+ * Return: void
  */
-char *hash_table_get(const hash_table_t *ht, const char *key)
+
+void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t *node;
-	unsigned long int index;
+	unsigned long int index = 0, counter1 = 0, counter2 = 0;
+	hash_node_t *temp = NULL;
 
-	if (ht == NULL || key == NULL || *key == '\0')
-		return (NULL);
+	if (!ht)
+		return;
 
-	index = key_index((const unsigned char *)key, ht->size);
-	if (index >= ht->size)
-		return (NULL);
+	for (; index < ht->size; index++)
+	{
+		temp = ht->array[index];
+		while (temp != NULL)
+		{
+			counter1++;
+			temp = temp->next;
+		}
+	}
 
-	node = ht->array[index];
-	while (node && strcmp(node->key, key) != 0)
-		node = node->next;
-
-	return ((node == NULL) ? NULL : node->value);
+	index = 0;
+	printf("{");
+	for (; index < ht->size; index++)
+	{
+		temp = ht->array[index];
+		while (temp != NULL)
+		{
+			counter2++;
+			printf("'%s': '%s'", temp->key, temp->value);
+			if (counter2 != counter1)
+				printf(", ");
+			temp = temp->next;
+		}
+	}
+	printf("}\n");
 }
